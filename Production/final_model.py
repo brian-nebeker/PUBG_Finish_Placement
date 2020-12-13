@@ -113,9 +113,6 @@ df_final = df_final.copy()
 df_final.to_csv('df_final.csv')
 
 
-df_final['weighted_perc'] = df_final['lgbm_pred']*0.5 + df_final['mlp_pred']*0.5
-
-test = adjust_winPlacePerc(df_final, 'weighted_perc')
-
-temp = test[test['winPlacePerc'].isna()]
+# Final stack ensemble performed in kaggle Notebook, submission.
+# Simple linear regression of 2 model outputs and actual as y
 
